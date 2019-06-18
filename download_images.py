@@ -1,5 +1,4 @@
-from urllib.request import urlretrieve
-import os, sys, time, bs4, json
+import os, bs4, json
 import urllib.request, urllib.error
 
 # 設定：検索するキーワード
@@ -7,9 +6,6 @@ keywords = ['rose', 'sunflower', 'lilium']
 
 # 設定：検索する数
 image_count = 50
-
-# 設定：画像を保存するファイルパス
-dataset_dir = "./dataset/"
 
 def get_soup(url, header):
     return bs4.BeautifulSoup(urllib.request.urlopen(urllib.request.Request(url,headers=header)),'html.parser')
